@@ -1,0 +1,4 @@
+Revision history for Dist::Zilla::Plugin::UploadToMirror
+
+v1.123000
+ - Initial creation of plugin (Stephen Cardie)
