@@ -47,6 +47,14 @@ sub release
 {
     my($self,$archive) = @_;
 
+    try {
+        ssh(
+            $self->host,
+            sprintf(
+                'sudo mkdir -p %s',
+                $self->directory ) ) }
+    catch { $self->log_fatal($ARG) };
+
     try { 
         scp(
             $archive,
