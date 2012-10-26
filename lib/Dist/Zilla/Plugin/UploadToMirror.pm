@@ -55,23 +55,29 @@ sub release
                 $self->directory ) ) }
     catch { $self->log_fatal($ARG) };
 
-    try { 
-        scp(
-            $archive,
-            sprintf( '%s:%s', $self->host, $self->directory ) ); }
-    catch { $self->log_fatal($ARG) };
+    my $scp = Net::SCP->new( { host => $self->host } );
 
     my $rc =
-    try {
-        ssh(
-            $self->host,
-            sprintf(
-                'sudo /usr/bin/env cpansite --site %s --cpan %s index',
-                $self->site,
-                $self->cpan ) ); }
+    try { 
+        $scp->put(
+            $archive, $self->directory ); }
     catch { $self->log_fatal($ARG) };
 
-    $self->log( "$archive uploaded to " . $self->directory );
+    if(!$rc) {
+        $self->log_fatal( $scp->{errstr} );
+    } else {
+        my $rc =
+        try {
+            ssh(
+                $self->host,
+                sprintf(
+                    'sudo /usr/bin/env cpansite --site %s --cpan %s index',
+                    $self->site,
+                    $self->cpan ) ); }
+        catch { $self->log_fatal($ARG) };
+    
+        $self->log( "$archive uploaded to " . $self->directory );
+    }
 
     return;
 }
