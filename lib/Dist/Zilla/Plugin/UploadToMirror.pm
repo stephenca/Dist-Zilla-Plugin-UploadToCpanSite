@@ -53,11 +53,12 @@ sub release
             sprintf( '%s:%s', $self->host, $self->directory ) ); }
     catch { $self->log_fatal($ARG) };
 
+    my $rc =
     try {
         ssh(
             $self->host,
             sprintf(
-                '/usr/bin/env cpansite --site %s --cpan %s index',
+                'sudo /usr/bin/env cpansite --site %s --cpan %s index',
                 $self->site,
                 $self->cpan ) ); }
     catch { $self->log_fatal($ARG) };
