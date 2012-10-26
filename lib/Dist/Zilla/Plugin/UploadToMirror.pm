@@ -22,6 +22,8 @@ has 'host'      => ( isa => Str, ro, required );
 has 'site'      => ( isa => Str, ro, required );
 has 'author'    => ( isa => Str, ro, required );
 has 'directory' => ( isa => Str, ro, lazy_build );
+has 'cpan'      => ( isa => Str, ro, default =>
+    'http://ftp.easynet.be/pub/CPAN/' );
 
 #
 # Version set by dist.ini; do not change here.
@@ -54,7 +56,10 @@ sub release
     try {
         ssh(
             $self->host,
-            sprintf( '/usr/bin/env cpansite --site %s index', $self->site ) ); }
+            sprintf(
+                '/usr/bin/env cpansite --site %s --cpan %s index',
+                $self->site,
+                $self->cpan ) ); }
     catch { $self->log_fatal($ARG) };
 
     $self->log( "$archive uploaded to " . $self->directory );
