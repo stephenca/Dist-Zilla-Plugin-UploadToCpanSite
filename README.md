@@ -4,7 +4,7 @@ Dist::Zilla::Plugin::UploadToMirror - Releaser plugin for uploading to Geekology
 
 # VERSION
 
-version 1.123000\_001
+version 1.123000\_002
 
 # AUTHOR
 
