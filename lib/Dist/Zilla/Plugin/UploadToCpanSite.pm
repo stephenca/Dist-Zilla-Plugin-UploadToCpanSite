@@ -1,4 +1,4 @@
-package Dist::Zilla::Plugin::UploadToMirror;
+package Dist::Zilla::Plugin::UploadToCpanSite;
 
 use common::sense;
 use namespace::autoclean;
@@ -22,7 +22,7 @@ has 'host'      => ( isa => Str, ro, required );
 has 'site'      => ( isa => Str, ro, required );
 has 'author'    => ( isa => Str, ro, required );
 has 'directory' => ( isa => Str, ro, lazy_build );
-has 'cpan'      => ( isa => Str, ro, default =>
+has 'cpan'      => ( isa => Str, ro, required, default =>
     'http://ftp.easynet.be/pub/CPAN/' );
 
 #
@@ -51,7 +51,7 @@ sub release
         ssh(
             $self->host,
             sprintf(
-                'sudo mkdir -p %s',
+                'mkdir -p %s',
                 $self->directory ) ) }
     catch { $self->log_fatal($ARG) };
 
@@ -71,7 +71,7 @@ sub release
             ssh(
                 $self->host,
                 sprintf(
-                    'sudo /usr/bin/env cpansite --site %s --cpan %s index',
+                    '/usr/bin/env cpansite --site %s --cpan %s index',
                     $self->site,
                     $self->cpan ) ); }
         catch { $self->log_fatal($ARG) };
