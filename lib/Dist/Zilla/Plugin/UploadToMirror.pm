@@ -38,7 +38,7 @@ sub _build_directory
       } ( 1, 2, length($self->author) );
 
     return File::Spec->catdir(
-        $self->site, @args );
+        $self->site, authors => id => @args );
 }
 
 sub release 
