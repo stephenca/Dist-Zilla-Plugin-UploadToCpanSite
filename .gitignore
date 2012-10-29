@@ -24,4 +24,4 @@ META.json
 1
 lib/perl5/*
 man/
-Dist-Zilla-Plugin-UploadToMirror-*/
+Dist-Zilla-Plugin-UploadToCpanSite-*/

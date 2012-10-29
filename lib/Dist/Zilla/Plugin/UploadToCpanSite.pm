@@ -90,6 +90,22 @@ sub _build_directory
         $self->site, authors => id => @args );
 }
 
+=pod
+
+=head1 METHODS
+
+=head2 release ( $archive )
+
+  This method does three things:
+
+  1. Calls 'mkdir $self->directory' on the remote host.
+  2. Transfers the archive to this location via scp.
+  3. Executes 'cpansite index' on the remote host.
+
+  Failure to perform any of these is a fatal error.
+
+=cut
+
 sub release 
 {
     my($self,$archive) = @_;
