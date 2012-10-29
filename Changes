@@ -1,7 +1,7 @@
 Revision history for Dist::Zilla::Plugin::UploadToMirror
 
-v1.123030  Mon Oct 29 09:38:17 2012 +0000
+1.123030  Mon Oct 29 09:38:17 2012 +0000
  - Full release. (Stephen Cardie)
 
-v1.123000  Fri Oct 26 14:47:23 2012 +0100
+1.123000  Fri Oct 26 14:47:23 2012 +0100
  - Initial creation of plugin (Stephen Cardie)
