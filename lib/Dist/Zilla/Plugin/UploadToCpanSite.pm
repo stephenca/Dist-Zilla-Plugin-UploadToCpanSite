@@ -134,4 +134,4 @@ no Moose;
 
 1;
 
-# ABSTRACT: Releaser plugin for uploading to Geekology mirror.
+# ABSTRACT: Dist::Zilla Releaser plugin for uploading to CPAN::Site mirror.
