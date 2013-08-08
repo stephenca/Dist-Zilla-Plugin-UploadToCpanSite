@@ -61,6 +61,12 @@ terms). Optional, defaults to http://ftp.easynet.be/pub/CPAN/.
 
     Failure to perform any of these is a fatal error.
 
+# ACKNOWLEDGMENTS
+
+    Initial development of this module took place during my employment at The
+  Marketing Lab (L<http://themarketinglab.co.uk>).  I am grateful to the
+  management for allowing me to release this to the CPAN.
+
 # AUTHOR
 
 Stephen Cardie <stephenca@ls26.net>

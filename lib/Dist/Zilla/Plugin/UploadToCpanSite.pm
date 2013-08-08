@@ -150,4 +150,14 @@ no Moose;
 
 1;
 
+=pod
+
+=head1 ACKNOWLEDGMENTS
+
+Initial development of this module took place during my employment at L<The
+Marketing Lab|http://themarketinglab.co.uk>.  I am grateful to the
+management for allowing me to release this to the CPAN.
+
+=cut
+
 # ABSTRACT: Dist::Zilla Releaser plugin for uploading to CPAN::Site mirror.
