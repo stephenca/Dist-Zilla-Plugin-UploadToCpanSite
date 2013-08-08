@@ -1,6 +1,7 @@
 # NAME
 
-Dist::Zilla::Plugin::UploadToMirror - Releaser plugin for uploading to Geekology mirror.
+Dist::Zilla::Plugin::UploadToMirror - Releaser plugin for uploading to a
+CPAN::Site mirror.
 
 # VERSION
 
