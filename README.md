@@ -4,7 +4,7 @@ Dist::Zilla::Plugin::UploadToCpanSite - Dist::Zilla Releaser plugin for uploadin
 
 # VERSION
 
-version 1.132200
+version 1.132210
 
 # DESCRIPTION
 
